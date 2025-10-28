@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Room | Tu Tienda de Videojuegos</title>
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo de Digital Room" id="header-logo">
+            <h1>Digital Room</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#recomendados">Recomendados</a></li>
+                <li><a href="pages/contacto.html">Contacto</a></li> </ul>
+        </nav>
+
+        <!--<div class="header-actions" id="header-actions">-->
+            <div id="auth-area" class="auth-area">
+                <!-- [auth.js] inyecta líneas html aquí para mostrar estado de sesion iniciada -->
+            </div>
+                
+        <!--</div>-->
+
+        <button id="theme-toggle" title="Cambiar Tema">🌙</button>
+    </header>
+
+    <main class="container">
+        
+        <section id="hero" class="hero">
+            <h2>Bienvenido a Digital Room</h2>
+            <p>Descubre los mejores títulos para Steam, Epic Games y más.</p>
+            <button id="ver-catalogo">Explorar Catálogo</button>
+        </section>
+
+        <section id="catalogo" class="game-catalog">
+            <h3>Juegos Destacados</h3>
+            <div id="juegos-container" class="grid-container">
+                </div>
+        </section>
+        
+        <section id="recomendados" class="game-recomendados">
+            <h3>Juegos Recomendados (Implementado con jQuery)</h3>
+            <div id="recomendados-container" class="grid-container">
+                </div>
+        </section>
+
+        <section id="novedades" class="novedades">
+            <h3>Novedades (Carga Asíncrona con AJAX)</h3>
+            <button id="cargar-novedades">Cargar Novedades</button>
+            <div id="novedades-contenido">
+                </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer" id="contacto">
+        <p>&copy; 2025 Digital Room. Todos los derechos reservados.</p>
+        <div class="social-links">
+            </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawR/h/+SJRWAU8+QpC6hMh0Jfm/E9Qk6G4Rk=" crossorigin="anonymous"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

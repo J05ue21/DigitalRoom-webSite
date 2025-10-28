@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iniciar Sesión - Full Chilling</title>
+  <link rel="stylesheet" href="../css/login.css" />
+  
+  <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.all.min.js "></script>
+  <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css " rel="stylesheet">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Iniciar Sesión</h2>
+    <form id="loginForm" novalidate>
+      <label for="loginUsername">Usuario</label>
+      <input type="text" id="loginUsername" name="username" placeholder="Tu usuario" />
+      <span class="input-error" style="display:none"></span>
+
+      <label for="loginPassword">Contraseña</label>
+      <input type="password" id="loginPassword" name="password" placeholder="Tu contraseña" />
+      <span class="input-error" style="display:none"></span>
+
+      <button type="submit">Entrar</button>
+    </form>
+
+    <p class="switch-option">
+      ¿No tienes cuenta? <a href="registro.html">Regístrate</a>
+    </p>
+  </div>
+
+  <script src="../js/login.js"></script>
+</body>
+</html>

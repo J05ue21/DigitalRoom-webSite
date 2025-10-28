@@ -1,0 +1,426 @@
+
+/* --- Variables y Temas (Tema OSCURO por defecto) --- */
+:root {
+    --color-primary: #1e3a8a; /* Azul oscuro */
+    --color-secondary: #3b82f6; /* Azul claro */
+    --color-background: #0f172a; /* Fondo muy oscuro */
+    --color-text-light: #f8fafc; /* Texto claro */
+    --color-text-dark: #1f2937; /* Texto oscuro */
+    --color-card-bg: #1f2937; /* Fondo de tarjetas */
+    --color-header-bg: #0b111e; /* Fondo de cabecera */
+    --color-success: #4ade80; 
+    --color-danger: #ef4444; 
+    --font-primary: 'Arial', sans-serif;
+    --font-secondary: 'Roboto', sans-serif; /* Texto general */
+}
+
+/* --- TEMA CLARO: Redefinición de variables cuando html[data-theme="light"] --- */
+html[data-theme="light"] {
+    --color-primary: #3b82f6; /* Azul claro */
+    --color-secondary: #1e3a8a; /* Azul oscuro */
+    --color-background: #ffffff; /* Fondo blanco */
+    --color-text-light: #1f2937; /* Texto oscuro */
+    --color-text-dark: #f8fafc; /* Texto claro */
+    --color-card-bg: #f3f4f6; /* Fondo de tarjetas claro */
+    --color-header-bg: #ffffff; /* Fondo de cabecera claro */
+    --color-danger: #ef4444;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    color: var(--color-text-light);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para el cambio de tema */
+}
+
+a {
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+/* --- Cabecera y Navegación --- */
+.main-header {
+    background-color: var(--color-header-bg);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--color-primary);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Estilo para el botón de cambio de tema */
+#theme-toggle {
+    background: none;
+    border: 2px solid var(--color-primary);
+    color: var(--color-secondary);
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+#theme-toggle:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+#header-logo {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    color: var(--color-text-light);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.main-nav ul li a {
+    color: var(--color-text-light);
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.main-nav ul li a:hover, .main-nav ul li a.active {
+    background-color: var(--color-primary);
+    border-radius: 5px;
+}
+
+/* --- Contenedor Principal y Hero --- */
+.container {
+    padding: 20px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*  Para el estilo Auth.js*/
+.auth-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#logoutBtn
+{
+    color:white;
+    display: inline-block;
+    padding: 12px 16px;
+    border-radius: 3px;
+    font-family: var(--font-secondary);
+    /*text-transform: uppercase;*/
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    background-color: var(--color-secondary);
+    text-align: center;
+}
+#logoutBtn:hover
+{
+    background-color: var(--color-primary);
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), #111827; 
+    border-radius: 8px;
+    margin-bottom: 40px;
+    background: url('https://images.unsplash.com/photo-1580234811497-9df7fd2f357e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+#ver-catalogo {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    background-color: var(--color-secondary);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+#ver-catalogo:hover {
+    background-color: var(--color-primary);
+}
+
+/* --- Títulos de Secciones --- */
+.game-catalog h3, .game-recomendados h3, .novedades h3, .contact-form-section h2 {
+    margin-bottom: 20px;
+    border-left: 5px solid var(--color-secondary);
+    padding-left: 10px;
+    font-size: 1.8rem;
+}
+.contact-form-section p {
+    margin-bottom: 20px;
+}
+
+/* --- Catálogo de Juegos (Grid Responsivo) --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px;
+}
+
+/* --- Estilos para las Tarjetas de Juegos --- */
+.tarjeta-juego {
+    background-color: var(--color-card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex; 
+    flex-direction: column;
+}
+
+.tarjeta-juego:hover {
+    transform: translateY(-8px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.imagen-juego {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 100%;
+}
+
+.etiqueta-oferta {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: var(--color-danger);
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-weight: bold;
+    font-size: 0.8rem;
+    z-index: 10;
+}
+
+.tarjeta-juego h4 {
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 1.2rem;
+    min-height: 50px;
+}
+
+.tarjeta-juego p {
+    padding: 0 10px;
+    font-size: 0.9rem;
+}
+
+.precio {
+    padding: 0 10px 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--color-secondary);
+    margin-top: auto;
+}
+
+.precio del {
+    color: #9ca3af;
+    margin-right: 5px;
+    text-decoration: line-through;
+    font-size: 0.9rem;
+}
+
+.precio-oferta {
+    color: var(--color-success);
+}
+
+.btn-comprar, .btn-comprar-jq {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-comprar:hover, .btn-comprar-jq:hover {
+    background-color: var(--color-secondary);
+}
+
+/* --- Estilos específicos para Novedades y Recomendados --- */
+#novedades {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: var(--color-card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--color-primary);
+}
+
+#cargar-novedades {
+    padding: 8px 15px;
+    background-color: var(--color-danger);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#cargar-novedades:hover {
+    background-color: #c53030;
+}
+
+#novedades-contenido {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px dashed var(--color-secondary);
+    min-height: 50px;
+    border-radius: 4px;
+}
+
+.game-recomendados {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #334155;
+}
+
+/* --- ESTILOS PARA EL FORMULARIO DE CONTACTO --- */
+.contact-form-section {
+    padding: 40px 0;
+}
+
+.contact-form {
+    background-color: var(--color-card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"], 
+.form-group input[type="email"], 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-secondary);
+    border-radius: 4px;
+    background-color: var(--color-background); 
+    color: var(--color-text-light);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+/* Estilo para mensajes de error */
+.error-message {
+    color: var(--color-danger);
+    font-size: 0.85rem;
+    margin-top: 5px;
+    min-height: 1.2rem;
+}
+
+.form-group input.error, .form-group textarea.error {
+    border: 2px solid var(--color-danger);
+}
+
+#submitBtn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--color-success);
+    color: var(--color-background);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#submitBtn:hover {
+    background-color: #22c55e;
+}
+
+/* --- Pie de Página --- */
+.main-footer {
+    background-color: var(--color-header-bg);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 2px solid var(--color-primary);
+    font-size: 0.9rem;
+}
+
+/* --- Media Query para Responsividad --- */
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .main-header {
+        flex-direction: column;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .main-nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    .logo {
+        margin-bottom: 10px;
+    }
+    .contact-form {
+        padding: 20px;
+    }
+}

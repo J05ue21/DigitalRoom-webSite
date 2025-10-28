@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro - Full Chilling</title>
+  <link rel="stylesheet" href="../css/registro.css">
+  
+  <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.all.min.js "></script>
+  <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.26.3/dist/sweetalert2.min.css " rel="stylesheet">
+</head>
+<body>
+  <div class="form-container">
+    <h2>Crear Cuenta</h2>
+    <form id="registerForm" novalidate>
+      <label for="registerUsername">Usuario</label>
+      <input type="text" id="registerUsername" placeholder="Tu usuario" />
+      <span class="input-error"></span>
+
+      <label for="registerEmail">Correo electrónico</label>
+      <input type="email" id="registerEmail" placeholder="ejemplo@correo.com" />
+      <span class="input-error"></span>
+
+      <label for="registerPassword">Contraseña</label>
+      <input type="password" id="registerPassword" placeholder="Mínimo 6 caracteres" />
+      <span class="input-error"></span>
+
+      <label for="registerConfirmPassword">Confirmar contraseña</label>
+      <input type="password" id="registerConfirmPassword" placeholder="Repite tu contraseña" />
+      <span class="input-error"></span>
+
+      <button type="submit">Registrarse</button>
+    </form>
+    <p class="switch-option">
+      ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a>
+    </p>
+  </div>
+
+  <script src="../js/registro.js"></script>
+</body>
+</html>
